@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    180deg,
+    rgba(65, 72, 80, 1) 0%,
+    rgba(19, 23, 32, 1) 100%
+  );
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.comments {
+  padding: 20px;
+  max-width: 800px;
+  width: 800px;
+}
+
+.header {
+  background: linear-gradient(
+    176deg,
+    rgba(61, 157, 234, 1) 0%,
+    rgba(74, 78, 238, 1) 100%
+  );
+
+  border-radius: 10px 10px 00px 0px;
+}
+
+h1,
+h2,
+h3 {
+  color: #d5e1ef;
+}
+p {
+  color: #d5e1ef;
+}
+h1 {
+  text-align: center;
+  font-weight: 500;
+  padding: 20px 0px;
+  margin: 0px;
+}
+.cards {
+  background: linear-gradient(
+    180deg,
+    rgba(52, 58, 79, 1) 0%,
+    rgba(15, 22, 32, 1) 100%
+  );
+  border-radius: 0px 0px 10px 10px;
+}
+.post {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.post:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(52, 58, 79, 1) 0%,
+    rgba(15, 22, 32, 1) 100%
+  );
+  box-shadow: -2px -2px 2px 0px rgb(80 80 80 / 10%);
+}
+
+.avatar-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  background: linear-gradient(
+    176deg,
+    rgba(61, 157, 234, 1) 0%,
+    rgba(74, 78, 238, 1) 100%
+  );
+}
+.content {
+  padding: 10px;
+}
+.title {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 0px;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+@media (max-width: 1025px) {
+  .comments {
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .comments {
+    max-width: 300px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+}
