@@ -1,6 +1,8 @@
 import React from "react";
 
-const PostDetails = () => {
+const PostDetails = ({ posts }) => {
+  const [title, body] = posts;
+  console.log(posts);
   return (
     <div>
       <div className="post-details">
@@ -13,10 +15,7 @@ const PostDetails = () => {
           </p>
         </div>
         <div className="content">
-          <h2 className="title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
-            tempore!
-          </h2>
+          <h2 className="title"></h2>
           <p className="text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vero
             facilis optio ad expedita delectus libero reprehenderit

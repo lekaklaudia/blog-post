@@ -1,18 +1,32 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import axios from "axios";
+import JsonPlaceholder from "./Api/JsonPlaceholder";
 import Card from "./Card";
 
 import Post1 from "./Post1";
+import PostDetails from "./PostDetails";
 
 const App = () => {
+  const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const response = async () => {
-      const { data } = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
+      const { data } = await JsonPlaceholder({
+        url: "/users/",
+      });
+
+      setUsers(data);
+    };
+    response();
+  }, []);
+  console.log(users);
+
+  useEffect(() => {
+    const response = async () => {
+      const { data } = await JsonPlaceholder({
+        url: `/posts`,
+      });
 
       setPosts(data);
     };
@@ -20,13 +34,14 @@ const App = () => {
   }, []);
   console.log(posts);
 
-  return posts ? (
-    <div className="container ">
-      {posts.map((post, index) => (
-        <Card key={index}>
-          <Post1 post={post} />
-        </Card>
-      ))}
+  return users ? (
+    <div className="container">
+      <Card>
+        {users.slice(0, 4).map((user, index) => (
+          <Post1 key={index} user={user} posts={posts} />
+        ))}
+        <PostDetails posts={posts} />
+      </Card>
     </div>
   ) : null;
 };
