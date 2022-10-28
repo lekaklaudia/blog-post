@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const PostDetails = ({ posts }) => {
   const [title, body] = posts;
@@ -8,7 +8,7 @@ const PostDetails = ({ posts }) => {
       <div className="post-details">
         <div className="author">
           <p>
-            Post Publicato: USER.NAME alias{" "}
+            Post Publicato: USER.NAME alias{' '}
             <a href="#" className="author-username">
               USER.USERNAME
             </a>
