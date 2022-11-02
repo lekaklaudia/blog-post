@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
-import JsonPlaceholder from "./Api/JsonPlaceholder";
-import Card from "./Card";
-
-import Post1 from "./Post1";
-import PostDetails from "./PostDetails";
+import React, { useEffect, useState } from 'react';
+import './style.css';
+import JsonPlaceholder from './Api/JsonPlaceholder';
+import Card from './Card';
+import Post1 from './Post1';
+import Post2 from './Post2';
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -13,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const response = async () => {
       const { data } = await JsonPlaceholder({
-        url: "/users/",
+        url: '/users/',
       });
 
       setUsers(data);
@@ -36,12 +35,20 @@ const App = () => {
 
   return users ? (
     <div className="container">
-      <Card>
-        {users.slice(0, 4).map((user, index) => (
-          <Post1 key={index} user={user} posts={posts} />
-        ))}
-        <PostDetails posts={posts} />
-      </Card>
+      <div className="post-1">
+        <Card>
+          {posts.slice(0, 4).map((post, index) => (
+            <Post1 key={index} post={post} />
+          ))}
+        </Card>
+      </div>
+      <dic className="post2">
+        <Card>
+          {users.slice(0, 4).map((user, index) => (
+            <Post2 key={index} user={user} posts={posts} />
+          ))}
+        </Card>
+      </dic>
     </div>
   ) : null;
 };
