@@ -17,7 +17,7 @@ const Post2 = ({ user, posts }) => {
         setIsSelected={setIsSelected}
         user={user}
       />
-      (
+
       <div className="post">
         <div className="avatar-box">
           <h3 className="avatar-name">{name.match(/[A-Z]/g).join('')}</h3>
@@ -46,7 +46,6 @@ const Post2 = ({ user, posts }) => {
           </p>
         </div>
       </div>
-      )
     </div>
   ) : null;
 };

@@ -37,7 +37,7 @@ const App = () => {
       <div className="post2">
         <Card>
           {users.slice(0, 4).map((user, index) => (
-            <Post2 key={index} user={user} posts={posts} userId={user.id} />
+            <Post2 key={index} user={user} posts={posts} />
           ))}
         </Card>
       </div>
