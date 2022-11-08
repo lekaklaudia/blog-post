@@ -20,7 +20,6 @@ const App = () => {
     };
     response();
   }, []);
-  console.log(users);
 
   useEffect(() => {
     const response = async () => {
@@ -32,17 +31,16 @@ const App = () => {
     };
     response();
   }, []);
-  console.log(posts);
 
   return users ? (
     <div className="container">
-      <dic className="post2">
+      <div className="post2">
         <Card>
           {users.slice(0, 4).map((user, index) => (
             <Post2 key={index} user={user} posts={posts} userId={user.id} />
           ))}
         </Card>
-      </dic>
+      </div>
     </div>
   ) : null;
 };

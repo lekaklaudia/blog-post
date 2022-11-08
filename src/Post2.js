@@ -42,7 +42,6 @@ const Post2 = ({ user, posts }) => {
             Publicato da:&nbsp;
             <a href="#" className="author-username">
               {username}
-              {`selected is ${isSelected}`}
             </a>
           </p>
         </div>
