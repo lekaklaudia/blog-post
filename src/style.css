@@ -41,6 +41,7 @@ body {
 h1,
 h2,
 h3 {
+  text-transform: capitalize;
   color: #d5e1ef;
 }
 p {
@@ -48,6 +49,7 @@ p {
 }
 h1 {
   text-align: center;
+
   font-weight: 500;
   padding: 20px 0px;
   margin: 0px;
@@ -106,7 +108,41 @@ h1 {
   font-size: 1rem;
   margin: 5px 0;
 }
+.body {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
 
+.post-details {
+  margin: 40px 60px;
+  padding: 20px;
+  box-shadow: -1px -1px 36px 5px rgba(61, 157, 234, 0.51);
+  -webkit-box-shadow: -1px -1px 36px 5px rgba(61, 157, 234, 0.51);
+  -moz-box-shadow: -1px -1px 36px 5px rgba(61, 157, 234, 0.51);
+}
+
+a {
+  text-decoration: none;
+  background: linear-gradient(
+    176deg,
+    rgba(61, 157, 234, 1) 0%,
+    rgba(74, 78, 238, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-btn {
+  padding: 10px 15px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(
+    176deg,
+    rgba(61, 157, 234, 1) 0%,
+    rgba(74, 78, 238, 1) 100%
+  );
+}
 @media (max-width: 1025px) {
   .comments {
     max-width: 500px;

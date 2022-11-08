@@ -1,27 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
+import { Link } from 'react-router-dom';
+import PostDetails from './PostDetails';
 
-const Post1 = ({ user, posts }) => {
-  const { username, name, id } = user;
-  const { title, userId } = posts;
+const Post2 = ({ user, posts }) => {
+  const { username, name } = user;
+
+  const [selectedPost, setSelectedPost] = useState('');
+  const [isSelected, setIsSelected] = useState(false);
+
   return user ? (
     <div>
+      <PostDetails
+        isSelected={isSelected}
+        selectedPost={selectedPost}
+        setIsSelected={setIsSelected}
+        user={user}
+      />
+      (
       <div className="post">
         <div className="avatar-box">
           <h3 className="avatar-name">{name.match(/[A-Z]/g).join('')}</h3>
         </div>
         <div className="content">
-          <h2 className="title">{title}</h2>
-
+          {' '}
+          {posts
+            .filter((post) => post.userId === user.id)
+            .slice(0, 1)
+            .map((filteredpost) => (
+              <h2
+                className="title"
+                onClick={() => {
+                  setIsSelected(!isSelected);
+                  setSelectedPost(filteredpost);
+                }}
+              >
+                {filteredpost.title}
+              </h2>
+            ))}
           <p className="text">
-            Publicato da:
+            Publicato da:&nbsp;
             <a href="#" className="author-username">
               {username}
+              {`selected is ${isSelected}`}
             </a>
           </p>
         </div>
       </div>
+      )
     </div>
   ) : null;
 };
-export default Post1;
+export default Post2;
